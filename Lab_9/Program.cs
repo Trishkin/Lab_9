@@ -20,6 +20,21 @@ namespace Lab_9
             You.Healing(Enemy2);
             Enemy2.Status();
 
+            Console.WriteLine("_______________________________");
+            StringsMethods methods = new StringsMethods();
+            string MyString = "Привет мой маленький мир столь большой вселенной";
+            Console.WriteLine(MyString);
+
+            Action<string> register = methods.RegisterToUpper;
+            register(MyString);
+            register = methods.RegisterToLower;
+            register(MyString);
+
+            Func<string, string, string, string> retFunc = methods.ChangeString;
+            Console.WriteLine(retFunc(MyString, "е",""));
+
+            Func<string, string, int, string> retFunc2 = methods.InsertString;
+            Console.WriteLine(retFunc2(MyString, "Ну привет тебЕ", 9));
         }
 
         private static void DisplayMessage(string message)
